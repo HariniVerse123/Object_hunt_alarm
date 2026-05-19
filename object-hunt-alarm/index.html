@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Object Hunt Alarm</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Effects -->
+  <div class="background-grid"></div>
+  <div class="glow glow1"></div>
+  <div class="glow glow2"></div>
+  <div class="glow glow3"></div>
+
+  <!-- Main Container -->
+  <main class="main-container">
+
+    <section class="panel">
+
+      <!-- Left Side -->
+      <div class="left-section">
+
+        <div class="logo-area">
+          <h1 class="logo-text">
+            OBJECT<br>
+            HUNT ALARM
+          </h1>
+
+          <p class="subtitle">
+            Futuristic AI-powered alarm system that only stops when the target object is detected.
+          </p>
+        </div>
+
+        <!-- Alarm Controls -->
+        <div class="alarm-controls">
+
+          <div class="input-group">
+            <label class="label">SET WAKE-UP TIME</label>
+            <input type="time" id="alarmTime">
+          </div>
+
+          <button class="set-alarm-btn" onclick="setAlarm()">
+            ACTIVATE ALARM
+          </button>
+
+        </div>
+
+        <!-- Status Panel -->
+        <div class="status-panel">
+
+          <div class="panel-header">
+            <span class="status-dot"></span>
+            <h3>SYSTEM STATUS</h3>
+          </div>
+
+          <div id="status">
+            Waiting for alarm activation...
+          </div>
+
+          <div id="targetObject"></div>
+
+        </div>
+
+        <!-- Info Cards -->
+        <div class="info-cards">
+
+          <div class="info-card">
+            <h4>AI CORE</h4>
+            <p>ONLINE</p>
+          </div>
+
+          <div class="info-card">
+            <h4>VISION</h4>
+            <p>READY</p>
+          </div>
+
+          <div class="info-card">
+            <h4>SECURITY</h4>
+            <p>ACTIVE</p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Right Side -->
+      <div class="right-section">
+
+        <div class="camera-module">
+
+          <div class="camera-header">
+            <h2>AI CAMERA SYSTEM</h2>
+            <div class="camera-status">
+              <span></span>
+              LIVE
+            </div>
+          </div>
+
+          <div class="camera-frame">
+
+            <div class="scan-line"></div>
+
+            <div id="webcam-container">
+
+              <div class="camera-placeholder">
+
+                <div class="camera-icon">◉</div>
+
+                <h3>OBJECT DETECTION SYSTEM</h3>
+
+                <p>
+                  Webcam feed will appear here when the alarm activates.
+                  Scan the required object to stop the alarm.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Alarm Audio -->
+  <audio id="alarmSound" loop>
+    <source src="alarm.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Main JavaScript -->
+  <script src="script.js"></script>
+
+</body>
+</html>
+```
